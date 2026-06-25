@@ -1,0 +1,17 @@
+{
+  "name": "tasteshare",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "db:push": "cd backend && npx prisma db push",
+    "db:seed": "cd backend && npx tsx src/seed.ts",
+    "build": "cd frontend && npm run build",
+    "setup": "cd backend && npm install && npx prisma db push && npx tsx src/seed.ts && cd ../frontend && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
